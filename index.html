@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>SMC Pro Terminal</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1>Smart Money Trading Terminal</h1>
+
+<div class="container">
+
+<table>
+
+<tr>
+
+<th>Stock</th>
+<th>Price</th>
+<th>Signals</th>
+<th>Score</th>
+<th>Chart</th>
+
+</tr>
+
+{% for s in setups %}
+
+<tr>
+
+<td>{{s.stock}}</td>
+<td>{{s.price}}</td>
+<td>{{s.signals}}</td>
+<td>{{s.score}}</td>
+
+<td>
+
+<button onclick="loadChart('{{s.stock}}')">
+
+View Chart
+
+</button>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+<div id="chart"></div>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>
